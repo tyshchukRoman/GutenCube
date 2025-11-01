@@ -3,19 +3,21 @@
 /*
  * Enqueue Styles
  */
-function ragnarock_enqueue_styles() {
-  $style_version = filemtime(RAGNAROCK_THEME_PATH . "/dist/css/main.min.css");
-  wp_enqueue_style('main-style', RAGNAROCK_THEME_URI . "/dist/css/main.min.css", [], $style_version, 'all');
+function gutencube_enqueue_styles() {
+  $style_version = filemtime(GUTENCUBE_THEME_PATH . "/dist/css/main.min.css");
+  wp_enqueue_style('main-style', GUTENCUBE_THEME_URI . "/dist/css/main.min.css", [], $style_version, 'all');
 }
-add_action('wp_enqueue_scripts', 'ragnarock_enqueue_styles', 999999);
+add_action('wp_enqueue_scripts', 'gutencube_enqueue_styles');
+add_action('enqueue_block_editor_assets', 'gutencube_enqueue_styles');
+
 
 
 /*
  * Enqueue Scripts
  */
-function ragnarock_enqueue_js() {
-  $script_version = filemtime(RAGNAROCK_THEME_PATH . "/dist/main.min.js");
-  wp_enqueue_script('main-script', RAGNAROCK_THEME_URI . "/dist/main.min.js", [], $script_version, true);
+function gutencube_enqueue_js() {
+  $script_version = filemtime(GUTENCUBE_THEME_PATH . "/dist/main.min.js");
+  wp_enqueue_script('main-script', GUTENCUBE_THEME_URI . "/dist/main.min.js", [], $script_version, true);
 
   // Passing PHP variables to JavaScript
   wp_localize_script('main-script', 'site', [
@@ -25,4 +27,4 @@ function ragnarock_enqueue_js() {
     'theme_url'   => get_template_directory_uri(),
   ]);
 }
-add_action('wp_enqueue_scripts', 'ragnarock_enqueue_js');
+add_action('wp_enqueue_scripts', 'gutencube_enqueue_js');

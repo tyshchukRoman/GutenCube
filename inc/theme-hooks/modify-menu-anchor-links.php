@@ -6,9 +6,9 @@
  * This is added becase we don't want to highlight anchor menu items
  *
  */
-add_filter( 'nav_menu_link_attributes', 'ragnarock_remove_aria_current_from_anchor_links', 10, 3 );
+add_filter( 'nav_menu_link_attributes', 'gutencube_remove_aria_current_from_anchor_links', 10, 3 );
 
-function ragnarock_remove_aria_current_from_anchor_links( $atts, $item, $args ) {
+function gutencube_remove_aria_current_from_anchor_links( $atts, $item, $args ) {
   if ( isset( $atts['href'] ) && strpos( $atts['href'], '#' ) !== false ) {
     unset( $atts['aria-current'] );
   }

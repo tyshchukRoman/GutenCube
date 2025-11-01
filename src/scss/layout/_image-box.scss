@@ -1,0 +1,10 @@
+.image-box {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+
+  * {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}

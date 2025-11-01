@@ -7,8 +7,8 @@
  *
  */
 
-require RAGNAROCK_THEME_PATH . '/inc/woocommerce-hooks/global/disable-woocommerce-styles.php';
-require RAGNAROCK_THEME_PATH . '/inc/woocommerce-hooks/global/disable-woocommerce-sidebar.php';
-require RAGNAROCK_THEME_PATH . '/inc/woocommerce-hooks/global/wrap-woocommerce-pages.php';
-require RAGNAROCK_THEME_PATH . '/inc/woocommerce-hooks/global/custom-quantity-input.php';
-require RAGNAROCK_THEME_PATH . '/inc/woocommerce-hooks/global/add-to-cart-button.php';
+require GUTENCUBE_THEME_PATH . '/inc/woocommerce-hooks/global/disable-woocommerce-styles.php';
+require GUTENCUBE_THEME_PATH . '/inc/woocommerce-hooks/global/disable-woocommerce-sidebar.php';
+require GUTENCUBE_THEME_PATH . '/inc/woocommerce-hooks/global/wrap-woocommerce-pages.php';
+require GUTENCUBE_THEME_PATH . '/inc/woocommerce-hooks/global/custom-quantity-input.php';
+require GUTENCUBE_THEME_PATH . '/inc/woocommerce-hooks/global/add-to-cart-button.php';

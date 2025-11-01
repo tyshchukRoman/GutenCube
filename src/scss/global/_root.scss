@@ -2,108 +2,87 @@
 
   /*
    * =================================================
-   *  Global Tokens
+   *  Global Tokens (Using WordPress theme.json variables)
    * =================================================
    */
 
   /*
    * Colors
    */
-  --color-black: #000000;     /* Just pure black color */
-  --color-white: #FFFFFF;     /* Just pure white color */
-
-  --color-dark: #121212;      /* Usually used for text color (or opposite) */
-  --color-light: #FFF7E9;     /* Usually used for background color (or opposite) */
-
-  --color-primary: #AE8F55;   /* Accent color. Usually button's bg color */
-  --color-secondary: #FFEECE; /* Secondary main color. Sometimes is absent */
-
-  --color-success: green;
-  --color-warning: yellow;
-  --color-error: red;
-
+  --color-black: var(--wp--preset--color--black);     /* Just pure black color */
+  --color-white: var(--wp--preset--color--white);     /* Just pure white color */
+  --color-dark: var(--wp--preset--color--dark);       /* Usually used for text color (or opposite) */
+  --color-light: var(--wp--preset--color--light);     /* Usually used for background color (or opposite) */
+  --color-primary: var(--wp--preset--color--primary); /* Accent color. Usually button's bg color */
+  --color-secondary: var(--wp--preset--color--secondary); /* Secondary main color. Sometimes is absent */
+  --color-success: var(--wp--preset--color--success);
+  --color-warning: var(--wp--preset--color--warning);
+  --color-error: var(--wp--preset--color--error);
 
   /*
    * Font Sizes
    */
-  --size-h1: clamp(3.375rem, 6vw, 4.5rem);   /* 54px → 72px */
-  --size-h2: clamp(2.5rem, 4.5vw, 3.375rem); /* 40px → 54px */
-  --size-h3: clamp(2.125rem, 3.5vw, 2.5rem); /* 34px → 40px */
-  --size-h4: clamp(1.375rem, 3vw, 2.125rem); /* 22px → 34px */
-  --size-h5: 1.375rem;                       /* 22px */
-  --size-h6: 1.125rem;                       /* 18px */
-
-  --size-md: 1rem;                           /* 16px */
-  --size-sm: 0.875rem;                       /* 14px */
-  --size-xs: 0.75rem;                        /* 12px */
-
+  --size-h1: var(--wp--preset--font-size--h-1);   /* 54px → 72px */
+  --size-h2: var(--wp--preset--font-size--h-2);   /* 40px → 54px */
+  --size-h3: var(--wp--preset--font-size--h-3);   /* 34px → 40px */
+  --size-h4: var(--wp--preset--font-size--h-4);   /* 22px → 34px */
+  --size-h5: var(--wp--preset--font-size--h-5);   /* 22px */
+  --size-h6: var(--wp--preset--font-size--h-6);   /* 18px */
+  --size-md: var(--wp--preset--font-size--md);   /* 16px */
+  --size-sm: var(--wp--preset--font-size--sm);   /* 14px */
+  --size-xs: var(--wp--preset--font-size--xs);   /* 12px */
 
   /*
    * Font Families
    */
-  --font-primary: 'Inter', sans-serif;
-  --font-secondary: 'Inter', sans-serif;
-
+  --font-primary: var(--wp--preset--font-family--primary);
+  --font-secondary: var(--wp--preset--font-family--secondary);
 
   /*
    * Font Weights
    */
-  --font-extra-bold: 700;
-  --font-bold: 600;
-  --font-medium: 500;
-  --font-regular: 400;
-
+  --font-extra-bold: var(--wp--custom--font-weight--extra-bold);
+  --font-bold: var(--wp--custom--font-weight--bold);
+  --font-medium: var(--wp--custom--font-weight--medium);
+  --font-regular: var(--wp--custom--font-weight--regular);
 
   /*
    * Line Heights
    */
-  --leading-flat: 1;        /* very compact */
-  --leading-normal: 1.25;   /* default comfortable reading */
-  --leading-relaxed: 1.5;   /* more open, good for body text */
-  --leading-loose: 1.625;   /* airy, headings or large blocks */
-
+  --leading-flat: var(--wp--custom--line-height--flat);        /* very compact */
+  --leading-normal: var(--wp--custom--line-height--normal);    /* default comfortable reading */
+  --leading-relaxed: var(--wp--custom--line-height--relaxed);  /* more open, good for body text */
+  --leading-loose: var(--wp--custom--line-height--loose);      /* airy, headings or large blocks */
 
   /*
    * Containers Width
    */
-  --container-sm: 980px;    /* Used for Content Pages ("Privacy Policy", "Cookie Policy") */
-  --container-md: 1200px;   /* The most common container width */
-  --container-lg: 1300px;   /* Can be used for wider Header or Footer */
-
+  --container-sm: var(--wp--custom--container--sm);    /* Used for Content Pages ("Privacy Policy", "Cookie Policy") */
+  --container-md: var(--wp--custom--container--md);    /* The most common container width */
+  --container-lg: var(--wp--custom--container--lg);    /* Can be used for wider Header or Footer */
 
   /*
    * Border Radius
    */ 
-  --radius-xs: 8px; 
-  --radius-sm: 12px; 
-  --radius-md: 16px; 
-  --radius-lg: 24px; 
-  --radius-xl: 40px; 
-
+  --radius-xs: var(--wp--custom--border-radius--xs); 
+  --radius-sm: var(--wp--custom--border-radius--sm); 
+  --radius-md: var(--wp--custom--border-radius--md); 
+  --radius-lg: var(--wp--custom--border-radius--lg); 
+  --radius-xl: var(--wp--custom--border-radius--xl); 
 
   /*
    * Transitions
    */
-  --transition-base: all 0.3s ease;
-
+  --transition-base: var(--wp--custom--transition--base);
 
   /*
    * Borders
    */
-  --stroke-base: 1px solid var(--color-black);
-  --stroke-transparent: 1px solid transparent;
-
+  --stroke-base: var(--wp--custom--border--base);
+  --stroke-transparent: var(--wp--custom--border--transparent);
 
   /*
    * Shadows
    */
-  --shadow-base: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
-
-  /*
-   * =================================================
-   *  Contextual Tokens
-   * =================================================
-   */
-
+  --shadow-base: var(--wp--custom--shadow--base);
 }
