@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the name of the zip file
-ZIP_FILE="../ragnarock.zip"
+ZIP_FILE="../GutenCube.zip"
 
 # Remove existing zip file if it exists
 if [ -f "$ZIP_FILE" ]; then
