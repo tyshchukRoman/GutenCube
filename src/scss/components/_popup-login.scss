@@ -1,0 +1,65 @@
+.popup-login {
+
+  &__login {
+    display: none;
+  }
+
+  [data-tab="login"] &__login {
+    display: block;
+  }
+
+  &__register {
+    display: none;
+  }
+
+  [data-tab="register"] &__register {
+    display: block;
+  }
+
+  &__reset-password {
+    @include flow;
+    display: none;
+  }
+
+  [data-tab="reset-password"] &__reset-password {
+    display: block;
+  }
+
+  .account-switcher {
+    @include reset-button;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .form-row:has(.woocommerce-form-login__rememberme) {
+    @include repel;
+  }
+
+  .woocommerce-ResetPassword,
+  .woocommerce-form {
+    @include flow;
+  }
+
+  .lost_password {
+    margin-top: 0;
+  }
+
+  button[type="submit"] {
+    margin-top: 0;
+  }
+
+  // .woocommerce-form__label,
+  // .lost_password {
+  //   display: none;
+  // }
+
+  .lost-rem .woocommerce-form__label,
+  .lost-rem .lost_password {
+    display: block;
+  }
+
+  .reset-switcher {
+    margin-top: 0.5rem;
+  }
+
+}

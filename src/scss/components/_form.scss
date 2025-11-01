@@ -1,0 +1,210 @@
+/*
+ * Forms elements styling
+ */
+
+
+// Global Form styles
+input,
+textarea {
+  accent-color: var(--color-primary);
+  resize: none;
+}
+
+
+// Styles for input fields
+@mixin input {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--color-primary);
+  transition: var(--transition-base);
+  background: var(--color-white);
+
+  font-size: var(--size-5);
+  font-weight: var(--font-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-black);
+
+  &::placeholder {
+    color: var(--color-dark);
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// remove reset icon
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="text"],
+input[type="textarea"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="search"],
+textarea,
+select {
+  @include input;
+}
+
+input[type="search"] {
+  width: 100%;
+  max-width: 14rem;
+  background: url(../assets/icons/search-icon.svg) no-repeat 1rem center;
+  background-size: 1rem;
+  padding-left: 2.5rem;
+  height: 2.5rem;
+}
+
+textarea {
+  height: 10rem;
+}
+
+
+// Label
+label {
+  display: inline-block;
+  line-height: var(--leading-relaxed);
+  color: var(--color-black);
+  font-weight: var(--font-regular);
+  margin-bottom: 0.25rem;
+}
+
+
+/*
+ * Search Select Field
+ */
+.select2 {
+  @include input;
+  
+  li {
+    margin-bottom: 0;
+  }
+
+  .selection {
+    display: flex;
+    align-items: center;
+  }
+
+  .select2-selection__rendered {
+    padding: 0 !important;
+  }
+
+  .select2-selection {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .select2-selection__arrow {
+    height: 100% !important;
+  }
+}
+
+.select2-search__field {
+  height: 3rem;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+fieldset > legend {
+  display: none;
+}
+
+.password-input {
+  position: relative;
+}
+
+.show-password-input {
+  background-color: transparent;
+  border-radius: 0;
+  border: 0;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0.7em;
+  text-decoration: none;
+  top: 50%;
+  transform: translateY( -50% );
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  -webkit-font-smoothing: inherit;
+}
+
+.show-password-input::before {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.3 3.3C16.9 2.9 16.2 2.9 15.7 3.3L13.3 5.7C12.2437 5.3079 11.1267 5.1048 10 5.1C6.2 5.2 2.8 7.2 1 10.5C1.2 10.9 1.5 11.3 1.8 11.7C2.6 12.8 3.6 13.7 4.7 14.4L3 16.1C2.6 16.5 2.5 17.2 3 17.7C3.4 18.1 4.1 18.2 4.6 17.7L17.3 4.9C17.7 4.4 17.7 3.7 17.3 3.3ZM6.7 12.3L5.4 13.6C4.2 12.9 3.1 11.9 2.3 10.7C3.5 9 5.1 7.8 7 7.2C5.7 8.6 5.6 10.8 6.7 12.3ZM10.1 9C9.6 8.5 9.7 7.7 10.2 7.2C10.7 6.8 11.4 6.8 11.9 7.2L10.1 9ZM18.3 9.5C17.8 8.8 17.2 8.1 16.5 7.6L15.5 8.6C16.3 9.2 17 9.9 17.6 10.8C15.9 13.4 13 15 9.9 15H9.1L8.1 16C8.8 15.9 9.4 16 10 16C13.3 16 16.4 14.4 18.3 11.7C18.6 11.3 18.8 10.9 19.1 10.5C18.8 10.2 18.6 9.8 18.3 9.5ZM14 10L10 14C12.2 14 14 12.2 14 10Z" fill="%23111111"/></svg>');
+  content: '';
+  display: block;
+  height: 22px;
+  width: 22px;
+}
+
+.show-password-input.display-password::before {
+  background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.3 9.49999C15 4.89999 8.50002 3.79999 3.90002 7.19999C2.70002 8.09999 1.70002 9.29999 0.900024 10.6C1.10002 11 1.40002 11.4 1.70002 11.8C5.00002 16.4 11.3 17.4 15.9 14.2C16.8 13.5 17.6 12.8 18.3 11.8C18.6 11.4 18.8 11 19.1 10.6C18.8 10.2 18.6 9.79999 18.3 9.49999ZM10.1 7.19999C10.6 6.69999 11.4 6.69999 11.9 7.19999C12.4 7.69999 12.4 8.49999 11.9 8.99999C11.4 9.49999 10.6 9.49999 10.1 8.99999C9.60003 8.49999 9.60003 7.69999 10.1 7.19999ZM10 14.9C6.90002 14.9 4.00002 13.3 2.30002 10.7C3.50002 8.99999 5.10002 7.79999 7.00002 7.19999C6.30002 7.99999 6.00002 8.89999 6.00002 9.89999C6.00002 12.1 7.70002 14 10 14C12.2 14 14.1 12.3 14.1 9.99999V9.89999C14.1 8.89999 13.7 7.89999 13 7.19999C14.9 7.79999 16.5 8.99999 17.7 10.7C16 13.3 13.1 14.9 10 14.9Z" fill="%23111111"/></svg>');
+}
+
+// Beautiful checkbox
+
+.woocommerce-form{
+
+  input[type=checkbox] {
+    webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    min-width: 18px;
+    height: 18px;
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    margin: 0 6px 0 0;
+    border-radius: 4px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  input[type=checkbox]:checked {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+  }
+
+  input[type=checkbox]:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 6px;
+    height: 12px;
+    border: solid var(--color-white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  input[type=checkbox]:checked:after {
+    opacity: 1;
+  }
+
+}
+
+.woocommerce-form__label-for-checkbox{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
